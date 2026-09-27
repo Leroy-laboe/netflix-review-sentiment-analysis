@@ -1,12 +1,10 @@
 import streamlit as st
-import pandas as pd
 import joblib
 import re
 import os
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 # ==========================================
 # 1. SETUP & CONFIG
@@ -209,7 +207,7 @@ st.markdown("""
 # App Content Wrapped in Styled Container
 st.markdown('<div style="text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" width="200"></div>', unsafe_allow_html=True)
 st.markdown('<h1 class="netflix-logo">SENTIMENT ANALYZER</h1>', unsafe_allow_html=True)
-st.markdown('<p class="tagline">ARTIFICIAL INTELLIGENCE REVIEW ENGINE</p>', unsafe_allow_html=True)
+st.markdown('<p class="tagline">NLP SENTIMENT CLASSIFIER</p>', unsafe_allow_html=True)
 
 model, vectorizer = load_model_artifacts()
 
@@ -235,21 +233,21 @@ else:
                         st.balloons()
                         st.markdown(f'<div class="result-container" style="border-top: 4px solid #46d369;">'
                                     f'<h2 style="color: #46d369;">POSITIVE</h2>'
-                                    f'<p style="color: #B3B3B3;">Our AI predicts a glowing review. Happy streaming! 🍿</p></div>', 
+                                    f'<p style="color: #B3B3B3;">The model classifies this review as positive.</p></div>', 
                                     unsafe_allow_html=True)
                     elif prediction == 'negative':
                         st.markdown(f'<div class="result-container" style="border-top: 4px solid #E50914;">'
                                     f'<h2 style="color: #E50914;">NEGATIVE</h2>'
-                                    f'<p style="color: #B3B3B3;">Looks like this one missed the mark for you. 📉</p></div>', 
+                                    f'<p style="color: #B3B3B3;">The model classifies this review as negative.</p></div>', 
                                     unsafe_allow_html=True)
                     else:
                         st.markdown(f'<div class="result-container" style="border-top: 4px solid #8c8c8c;">'
                                     f'<h2 style="color: #8c8c8c;">NEUTRAL</h2>'
-                                    f'<p style="color: #B3B3B3;">A balanced perspective on the content. 😐</p></div>', 
+                                    f'<p style="color: #B3B3B3;">The model classifies this review as neutral.</p></div>', 
                                     unsafe_allow_html=True)
             else:
                 st.warning("Please enter a review to analyze.")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.divider()
-st.markdown('<p style="text-align: center; color: #888; font-size: 0.9rem; font-weight: bold;">© 2026 Developed by Leroy, Tadiwanashe & Fathima Zuha</p>', unsafe_allow_html=True)
+st.markdown('<p style="text-align: center; color: #888; font-size: 0.9rem; font-weight: bold;">Group NLP project · Leroy Nyasha Mangwarara, Tadiwanashe & Fathima Zuha</p>', unsafe_allow_html=True)
