@@ -213,8 +213,8 @@ streamlit run app.py
 ### 1. Clone
 
 ```bash
-git clone https://github.com/Leroy-laboe/Sentiment-Analysis-of-Netflix-Play-Store-Reviews-.git
-cd Sentiment-Analysis-of-Netflix-Play-Store-Reviews-
+git clone https://github.com/Leroy-laboe/netflix-review-sentiment-analysis.git
+cd netflix-review-sentiment-analysis
 ```
 
 ### 2. Create a virtual environment
